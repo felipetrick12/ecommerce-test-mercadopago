@@ -5,7 +5,7 @@ const { customValidator } = require('../middleware/customValidator');
 const mercadoPago = require ('mercadopago');
 
 mercadoPago.configure({
-    access_token: 'TEST-6882358241142713-042615-f6bad4b3d85ef51203a0d22173bbc096-475973489'
+    access_token: 'APP_USR-2572771298846850-120119-a50dbddca35ac9b7e15118d47b111b5a-681067803'
 });
 
 router.post( '/', [
