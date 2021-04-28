@@ -18,6 +18,8 @@ app.get('*', (req,res) =>{
 
 
 app.use( '/api/products',require('./routes/products')); 
+app.use( '/api/web',require('./routes/webhook')); 
+
 
 app.listen(process.env.PORT,()=>{
     console.log(`servidor corriendo en puerto ${process.env.PORT}`);
