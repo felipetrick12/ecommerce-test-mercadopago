@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path= require('path');
 require('dotenv').config();
 
 var app = express();
@@ -7,8 +8,10 @@ var app = express();
 //habilitar cors
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/',(req, res) => {
-    res.send('Hola Mundo')
+    res.send(publicPath)
 })
 
 app.use( express.json() ); 
