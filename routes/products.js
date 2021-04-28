@@ -50,11 +50,11 @@ router.post( '/', [
                         ],
                         receiver_address: {}
                       },
-                      auto_return : "approved",
+                      auto_return : "approved", 
                       back_urls: {
-                        "failure": "http://localhost:4000/",
-                        "pending": "http://localhost:4000/api/products",
-                        "success": "http://localhost:4000/api/products"
+                        "failure": "https://felipetrick12-ecommerce-mp.herokuapp.com",
+                        "pending": "https://felipetrick12-ecommerce-mp.herokuapp.com/detail/4",
+                        "success": "https://felipetrick12-ecommerce-mp.herokuapp.com/detail/4"
                       },
                       differential_pricing: {},
                      
