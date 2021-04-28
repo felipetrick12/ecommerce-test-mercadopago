@@ -53,7 +53,7 @@ router.post( '/', [
                       auto_return : "approved", 
                       back_urls: {
                         "failure": "https://felipetrick12-ecommerce-mp.herokuapp.com",
-                        "pending": "https://felipetrick12-ecommerce-mp.herokuapp.com",
+                        "pending": `https://felipetrick12-ecommerce-mp.herokuapp.com/detail/${req.body.id}`,
                         "success": "https://felipetrick12-ecommerce-mp.herokuapp.com"
                       },
                       differential_pricing: {},
