@@ -50,7 +50,7 @@ router.post( '/', [
                         ],
                         receiver_address: {}
                       },
-                      auto_return : "", 
+                      auto_return : "approved", 
                       back_urls: {
                         "failure": "https://felipetrick12-ecommerce-mp.herokuapp.com",
                         "pending": "https://felipetrick12-ecommerce-mp.herokuapp.com",
