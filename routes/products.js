@@ -9,7 +9,7 @@ mercadoPago.configure({
 });
 
 router.post( '/', [
-    check('id','ID producto obligatorio').isNumeric().withMessage("ingresar numero").not().isEmpty(),
+    check('id','ID producto obligatorio').not().isEmpty(),
     check('name_product','Nombre producto obligatorio').not().isEmpty(),
     check('description','Descripcion de producto obligatorio').not().isEmpty(),
     check('url','Imagen obligatoria').not().isEmpty(),
@@ -23,10 +23,10 @@ router.post( '/', [
                 var preference = {
                        items: [
                          {
+                           id : req.body.id,
                            title: req.body.name_product,
                            description: req.body.description,
                            picture_url : req.body.url,
-                           category_id : req.body.id,
                            quantity: req.body.cantidad,
                            unit_price: req.body.precio
                          }
@@ -37,12 +37,17 @@ router.post( '/', [
                       },
                       external_reference : "duvanli@hotmail.es",
                       payment_methods: {
-                        excluded_payment_methods: [
-                          {}
+                        "excluded_payment_methods": [
+                          {
+                            "id": "amex"
+                          }
                         ],
-                        excluded_payment_types: [
-                          {}
-                        ]
+                        "excluded_payment_types": [
+                          {
+                            "id": "atm"
+                          }
+                        ],
+                        "installments": 6
                       },
                       shipments: {
                         free_methods: [
