@@ -10,7 +10,6 @@ mercadoPago.configure({
 
 router.post( '/', [
     check('name_product','Nombre producto obligatorio').not().isEmpty(),
-    check('description','Descripcion de producto obligatorio').not().isEmpty(),
     check('url','Imagen obligatoria').not().isEmpty(),
     check('cantidad','Cantidad de producto obligatoria').isNumeric().withMessage("ingresar numero").not().isEmpty(),
     check('precio','Precio Obligatorio').isNumeric().withMessage("ingresar numero").not().isEmpty(),
@@ -24,13 +23,14 @@ router.post( '/', [
                          {
                            id : '1234',
                            title: req.body.name_product,
-                           description: req.body.description,
+                           description:'Dispositivo móvil de Tienda e-commerce',
                            picture_url : req.body.url,
                            quantity: req.body.cantidad,
                            unit_price: req.body.precio
                          }
                        ], payer: {
-                         name:'Lalo Landa',
+                        "name": "Lalo",
+                        "surname": "Landa",
                          email: 'test_user_83958037@testuser.com',
                         phone: {
                           number:5549737300,
